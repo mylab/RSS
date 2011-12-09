@@ -1,0 +1,19 @@
+<div id="tag">
+  <%if session[:language] != nil%>
+    <%=render :partial => "/home/discard"%>
+  <%else%>
+    Select Language for corresponding feeds: <%= select_tag :language,"<option>Select Language</option><option>English</option><option>French</option><option>German</option>"%>
+    <%= observe_field :language, :url => { :action => :getfeeds }, :with => :language%>
+  <%end%>
+</div>
+
+
+
+
+<div id="feeds">
+  <%if session[:language]%>
+    <%=render :partial => "/home/feeds"%>
+  <%end%>
+</div>
+
+

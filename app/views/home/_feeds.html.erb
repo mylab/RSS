@@ -1,0 +1,11 @@
+<br/>
+<br/>
+<h2>Feeds</h2>
+
+<% @rss.items[(0..4)].each do |rss|%>
+  <br/>
+   <%= link_to rss.title,rss.link, :target => "blank"%>
+  <br/>
+  <%= truncate(rss.description, :length => 200)%>
+  <br/>
+<% end %>
