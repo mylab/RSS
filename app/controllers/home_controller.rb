@@ -49,7 +49,6 @@ class HomeController < ApplicationController
   private
 
   def feeds(language)
-    puts "ffffffffffffffffffffffffffffeeeeeeeeeeeeeeeeeeeeeeeeddddddddddddddsssssssssss", language
     if language == "English"
       @rss = RSS::Parser.parse(open('http://www.arenaflowers.com/files/sitemaps/arenaflowers.com/google_base_feed.xml').read, false)
     end
